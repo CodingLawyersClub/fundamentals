@@ -370,7 +370,7 @@ It should log the following:
 ["Clarence Thomas", "Sonia Sotomayor", "John Roberts"]
 ```
 
-If you want to see another example of `map` in action, [here is a 90 second video clip](https://youtu.be/rRgD1yVwIvE?t=19m}. I've started it at the right time for you, don't watch past 20:30.
+If you want to see another example of `map` in action, [here is a 90 second video clip](https://youtu.be/rRgD1yVwIvE?t=19m]. I've started it at the right time for you, don't watch past 20:30.
 
 ## Defining/Calling Functions
 
