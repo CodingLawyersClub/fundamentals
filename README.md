@@ -506,7 +506,7 @@ function2() {
 }
 ```
 
-💥💥💥You would get a CRASH!💥💥💥
+You would get a 💥💥💥crash💥💥💥!
 
 Why? Because *VARIABLES DECLARED INSIDE A FUNCTION ARE LOCAL TO THAT FUNCTION*. Only `function2()` knoes about `variableInFunction2` and only `function1()` knows about `variableInFunction1`!
 
