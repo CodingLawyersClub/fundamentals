@@ -18,7 +18,7 @@ Want proof? Type `ls` and hit enter. The `ls` command is short for listing out t
 
 You should see all the files located in your Desktop directory!
 
-OK, great. Now I want you to type `cd ..`. Hit enter.
+OK, great. Now I want you to type `cd ..` and hit enter.
 
 See how you're back in the `~` directory? The directory `..` denotes the parent directly of your current directory. So if you want to go up a folder, you enter `cd ..`. If you want to go in you `cd <folder name>`.
 
@@ -26,13 +26,13 @@ See how you're back in the `~` directory? The directory `..` denotes the parent 
 
 `git clone` is how we get code from Github to our computer. A clone does exactly what you think, it makes an exact copy. We're going to clone the repository that is hosting this README. Start by opening [the fundamentals repository](https://github.com/CodingLawyersClub/fundamentals) in a new tab and click the green button near the top that says "Clone or download." When the popup appears, select "Use SSH." Then select the little clipboard icon to the right to copy.
 
-Now, go back to `iTerm`. `cd` to make sure you're in your Desktop. And run the following:
+Now, go back to `iTerm`. `cd` to make sure you're in your Desktop. And paste the thing you copied to the clipboard. Run the following command:
 
 ```
 git clone git@github.com:CodingLawyersClub/fundamentals.git
 ```
 
-You just clone the repository hosting this README onto your Desktop. Now let's open it in iTerm!
+You just cloned the repository hosting this README onto your Desktop. Now let's open it in iTerm!
 
 ### `code .`
 
@@ -44,9 +44,9 @@ You should still be on your Desktop. `cd` into the `fundamentals` repository you
 code .
 ```
 
-Think of the `.` as here. When you say `code .` you're telling the command line to open VSCode with the contents of this folder.
+Think of the `.` as "here." When you say `code .` you're telling the command line to open VSCode with the contents of this folder.
 
-VSCode should pop-up, and the repository only contains two files. This weird `_config.yml` file (ignore that) and `README.md`. Click `README.md`. You're now seeing the markup language that I use to make these README's :)
+VSCode should pop-up, and the repository only contains two files. This weird `_config.yml` file (ignore that) and `README.md`. Click `README.md`. You're now seeing the markup language that I use to make this very README :)
 
 ## Prepping
 
@@ -54,19 +54,19 @@ Go to the [template-frontend repository](https://github.com/CodingLawyersClub/te
 
 Go to `iTerm`. Type `cd Desktop` and hit enter to move into your Desktop.
 
-While in Desktop, clone the frontend template repository and name is `fundamentals`. Do this by running the following command. *MAKE SURE YOU REPLACE YOUR_USERNAME_HERE WITH YOUR USERNAME!*.
+While in Desktop, clone the frontend template repository and name is `testing-fundamentals`. Do this by running the following command. *MAKE SURE YOU REPLACE YOUR_USERNAME_HERE WITH YOUR USERNAME!*.
 
 ```
-$ git clone git@github.com:YOUR_USERNAME_HERE/template-frontend.git fundamentals
+$ git clone git@github.com:YOUR_USERNAME_HERE/template-frontend.git testing-fundamentals
 ```
 
 The `$` in the above command represents the prompt and is not meant to be typed. Your prompt may look different! Now `cd` into the folder you just created:
 
 ```
-$ cd fundamentals
+$ cd testing-fundamentals
 ```
 
-Now you're in the `fundamentals` directory. We need to install Javascript dependencies required for our application. We do that by running `yarn`:
+Now you're in the `testing-fundamentals` directory. We need to install Javascript dependencies required for our application. We do that by running `yarn`:
 
 ```
 $ yarn
