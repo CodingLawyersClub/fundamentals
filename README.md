@@ -4,6 +4,36 @@
 
 First, [watch this 12 minute video](https://youtu.be/Ukg_U3CnJWI). Do not worry about understanding everything. I just want to make sure you are starting to get a feel of how things work in Javascript so we don't dive in completely cold.
 
+## Some Command Line
+
+As developers, the command line is how we interact with our computer. Anything you can do by clicking on the pretty interface of your computer, you can do with the command line. Needless to say, the possibilities are endless. There's only a couple of things I want you to know
+
+### `cd` and `l`
+
+The `cd` command is probably the most important for our purposes. `cd` stands for `change directory`. When you double click on a folder, you're basically doing a `cd` behind the scenes. Let's try some things out.
+
+Open up iTerm. Right now you're going to be in your root directory. I know that because of the `~`. Cool. type `cd Desk` and hit TAB. The TAB is an insanely helpful autocomplete trick we use so we don't have to type out the full name everytime we want to go somewhere. It should autocomplete to "Desktop". Hit enter. You're now in you Desktop!
+
+Want proof? type `l` and hit enter
+
+You should see all the files located in your Desktop directory!
+
+OK, great. Now I want you to type `cd ..`. Hit enter
+
+See how you're back in the `~` directory? the `..` take you one out. So if you want to go out a folder, you `cd ..`. If you want to go in you `cd FOLDER_NAME`
+
+### `rm -rf`
+
+There's only one more command I want to teach you. On your Desktop (the GUI version not the command line version) I want you to manually create a new folder by right clicking and selecting "New Folder." Name it `test`
+
+Go back into your command line. `cd` into `Desktop`. Type `l` and hit entere to confirm that `test` is a listed folder there.
+
+Now, I want to delete `test`. Type `rm -rf te` and hit TAB. Let it autocomplete to `test` for you. We are developers now. Developers are lazy.
+
+You just deleted the `test` folder! 😱 If you `l` again, you'll see our folder is now gone.
+
+`rm -rf` is a very quick way to throw things in the trash. Use it wisely!
+
 ## Prepping
 
 Go to the [template-frontend repository](https://github.com/CodingLawyersClub/template-frontend) and click the button that says "Fork" in the top right. When prompted, select your username.
