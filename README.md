@@ -530,3 +530,61 @@ printHello() {
 Adding the `this` before `printHello` tells the computer to look inside this class for a function named `printHello`. Everything should work now :). So remember: 
 1. Variables (whether it be a string, a function, it doesn't matter) defined inside of a function are local to that function
 2. If you want to call functions on our React `class`es, you need to use `this`.
+
+## Basic HTML, Flexbox & Styled Components
+
+CSS is how we make things look pretty. It's often described as "makeup" – it takes the structure (HTML) and makes it look prettier.
+
+I'm not a big fan of going through what each piece of CSS does. I just find that people forget what each piece does (I certainly do). I end up doing a lot of Googling when I want to make a page look stylish.
+
+However, there Flexbox and Styled Components I do think deserve a quick run-through, because it's what we'll be using to style our pages. So let's dive in!
+
+### Basic HTML
+
+We're going to leave `componentDidMount` alone for a while and start working with our `render` method finally. `render` is a necessary method on every react component. Whatever the `render` returns is what the page is going to actually draw.
+
+So let's try putting some stuff in the `render`!
+
+Delete all the stuff in the render except the `return` and parentheses so it looks like this:
+
+```
+render() {
+  return (
+
+  )
+}
+```
+
+Save and let the page reload. What happens?
+
+💥💥💥Crash!💥💥💥
+
+You'll see somethign about an unexpected token. What gives?
+
+Well, I hope you remember that *render must return something*. You can never have a React component that returns nothing!
+
+OK, let's fix that. Put in a `<div>` which is the most standard HTML component. Don't forget all HTML tags need to have a closing counterpart, too.
+
+```
+render() {
+  return (
+    <div>
+    </div>
+  )
+}
+```
+Cool. Our page loads again but you'll see now it's completely blank! This is because you're returning a completely blank HTML element. If you want proof its' running, try putting some text in between the `div`s. You should see some really ugly text on the page :)
+
+Ok, enough chit chat. Let's try making some actual stuff!
+
+### Flexbox
+
+OK I want you to import two things on the top of the page. Just copy and paste like I have:
+
+```
+import styled from 'styled-components';
+import { Box, Flex } from 'rebass';
+```
+
+
+
