@@ -334,7 +334,7 @@ Awesome. Let's also `console.log` our `person`. Our `componentDidMount()` should
 
 ```
 let person = { };
-person.firstName = "John";
+person.firstName = "Jon";
 person.lastName = "Snow";
 console.log(person);
 ```
