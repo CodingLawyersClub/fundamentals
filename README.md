@@ -26,10 +26,10 @@ See how you're back in the `~` directory? The directory `..` denotes the parent 
 
 `git clone` is how we get code from Github to our computer. A clone does exactly what you think, it makes an exact copy. We're going to clone the repository that is hosting this README. Start by opening [the fundamentals repository](https://github.com/CodingLawyersClub/fundamentals) in a new tab and click the green button near the top that says "Clone or download." When the popup appears, select "Use SSH." Then select the little clipboard icon to the right to copy.
 
-Now, go back to `iTerm`. `cd` to make sure you're in your Desktop. And paste the thing you copied to the clipboard. Run the following command:
+Now, go back to `iTerm`. `cd` to make sure you're in your Desktop. And paste the thing you copied to the clipboard. Run the following command: (the $ in the above command represents the prompt and is not meant to be typed. Your prompt may look different!):
 
 ```
-git clone git@github.com:CodingLawyersClub/fundamentals.git
+$ git clone git@github.com:CodingLawyersClub/fundamentals.git
 ```
 
 You just cloned the repository hosting this README onto your Desktop. Now let's open it in iTerm!
@@ -41,7 +41,7 @@ You got this command if you followed our [Getting Started Guide](https://github.
 You should still be on your Desktop. `cd` into the `fundamentals` repository you just cloned. Open it with the following command:
 
 ```
-code .
+$ code .
 ```
 
 Think of the `.` as "here." When you say `code .` you're telling the command line to open VSCode with the contents of this folder.
@@ -60,7 +60,7 @@ While in Desktop, clone the frontend template repository and name is `testing-fu
 $ git clone git@github.com:YOUR_USERNAME_HERE/template-frontend.git testing-fundamentals
 ```
 
-The `$` in the above command represents the prompt and is not meant to be typed. Your prompt may look different! Now `cd` into the folder you just created:
+Now `cd` into the folder you just created:
 
 ```
 $ cd testing-fundamentals
