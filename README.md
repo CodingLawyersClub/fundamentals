@@ -22,6 +22,32 @@ OK, great. Now I want you to type `cd ..`. Hit enter.
 
 See how you're back in the `~` directory? The directory `..` denotes the parent directly of your current directory. So if you want to go up a folder, you enter `cd ..`. If you want to go in you `cd <folder name>`.
 
+### `git clone`
+
+`git clone` is how we get code from Github to our computer. A clone does exactly what you think, it makes an exact copy. We're going to clone the repository that is hosting this README. Start by opening [the fundamentals repository](https://github.com/CodingLawyersClub/fundamentals) in a new tab and click the green button near the top that says "Clone or download." When the popup appears, select "Use SSH." Then select the little clipboard icon to the right to copy.
+
+Now, go back to `iTerm`. `cd` to make sure you're in your Desktop. And run the following:
+
+```
+git clone git@github.com:CodingLawyersClub/fundamentals.git
+```
+
+You just clone the repository hosting this README onto your Desktop. Now let's open it in iTerm!
+
+### `code .`
+
+You got this command if you followed our [Getting Started Guide](https://github.com/CodingLawyersClub/getting-started). Basically this opens up a codebase, or file, into VS Code, which is the text editor we'll be using to write code.
+
+You should still be on your Desktop. `cd` into the `fundamentals` repository you just cloned. Open it with the following command:
+
+```
+code .
+```
+
+Think of the `.` as here. When you say `code .` you're telling the command line to open VSCode with the contents of this folder.
+
+VSCode should pop-up, and the repository only contains two files. This weird `_config.yml` file (ignore that) and `README.md`. Click `README.md`. You're now seeing the markup language that I use to make these README's :)
+
 ## Prepping
 
 Go to the [template-frontend repository](https://github.com/CodingLawyersClub/template-frontend) and click the button that says "Fork" in the top right. When prompted, select your username.
