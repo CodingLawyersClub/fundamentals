@@ -22,18 +22,6 @@ OK, great. Now I want you to type `cd ..`. Hit enter.
 
 See how you're back in the `~` directory? The directory `..` denotes the parent directly of your current directory. So if you want to go up a folder, you enter `cd ..`. If you want to go in you `cd <folder name>`.
 
-### `rm -rf`
-
-There's only one more command I want to teach you. On your Desktop (the GUI version not the command line version) I want you to manually create a new folder by right clicking and selecting "New Folder". Name it `test`. (You could have also created this folder with the shell command `mkdir`.)
-
-Go back into your command line. Move to the Desktop by entering `cd Desktop`. Type `ls` and hit enter to confirm that `test` is a listed folder there.
-
-Now, I want to delete `test`. Type `rm -rf te` and hit TAB. Let it autocomplete to `test` for you. We are developers now. Developers are lazy. Hit enter.
-
-You just deleted the `test` folder! 😱 If you `ls` again, you'll see our folder is now gone.
-
-`rm -rf` is a very quick way to throw things in the trash. Use it wisely!
-
 ## Prepping
 
 Go to the [template-frontend repository](https://github.com/CodingLawyersClub/template-frontend) and click the button that says "Fork" in the top right. When prompted, select your username.
