@@ -6,31 +6,31 @@ First, [watch this 12 minute video](https://youtu.be/Ukg_U3CnJWI). Do not worry 
 
 ## Some Command Line
 
-As developers, the command line is how we interact with our computer. Anything you can do by clicking on the pretty interface of your computer, you can do with the command line. Needless to say, the possibilities are endless. There's only a couple of things I want you to know
+As developers, the command line is how we interact with our computer. Anything you can do by clicking on the pretty interface of your computer, you can do with the command line. Needless to say, the possibilities are endless. There's only a couple of things I want you to know.
 
-### `cd` and `l`
+### `cd` and `ls`
 
-The `cd` command is probably the most important for our purposes. `cd` stands for `change directory`. When you double click on a folder, you're basically doing a `cd` behind the scenes. Let's try some things out.
+The `cd` command is probably the most important for our purposes. `cd` stands for "change directory". When you double click on a folder in Finder, you're basically doing a `cd` behind the scenes. Let's try some things out.
 
-Open up iTerm. Right now you're going to be in your root directory. I know that because of the `~`. Cool. type `cd Desk` and hit TAB. The TAB is an insanely helpful autocomplete trick we use so we don't have to type out the full name everytime we want to go somewhere. It should autocomplete to "Desktop". Hit enter. You're now in you Desktop!
+Open up iTerm. Right now you're going to be in your home directory, which is often abbreviated to `~`. Cool. Type `cd Desk` and hit TAB. The TAB is an insanely helpful autocomplete trick we use so we don't have to type out the full name everytime we want to go somewhere. It should autocomplete to "Desktop". Hit enter. You're now in your Desktop!
 
-Want proof? type `l` and hit enter. The `l` command is short for listing out the contents of your directory. You're going to use it *all the time* so get comfortable with him.
+Want proof? Type `ls` and hit enter. The `ls` command is short for listing out the contents of your directory. You're going to use it *all the time* so get comfortable with it.
 
 You should see all the files located in your Desktop directory!
 
 OK, great. Now I want you to type `cd ..`. Hit enter.
 
-See how you're back in the `~` directory? the `..` take you one out. So if you want to go out a folder, you `cd ..`. If you want to go in you `cd FOLDER_NAME`
+See how you're back in the `~` directory? The directory `..` denotes the parent directly of your current directory. So if you want to go up a folder, you enter `cd ..`. If you want to go in you `cd <folder name>`.
 
 ### `rm -rf`
 
-There's only one more command I want to teach you. On your Desktop (the GUI version not the command line version) I want you to manually create a new folder by right clicking and selecting "New Folder." Name it `test`
+There's only one more command I want to teach you. On your Desktop (the GUI version not the command line version) I want you to manually create a new folder by right clicking and selecting "New Folder". Name it `test`. (You could have also created this folder with the shell command `mkdir`.)
 
-Go back into your command line. `cd` into `Desktop`. Type `l` and hit entere to confirm that `test` is a listed folder there.
+Go back into your command line. Move to the Desktop by entering `cd Desktop`. Type `ls` and hit enter to confirm that `test` is a listed folder there.
 
-Now, I want to delete `test`. Type `rm -rf te` and hit TAB. Let it autocomplete to `test` for you. We are developers now. Developers are lazy.
+Now, I want to delete `test`. Type `rm -rf te` and hit TAB. Let it autocomplete to `test` for you. We are developers now. Developers are lazy. Hit enter.
 
-You just deleted the `test` folder! 😱 If you `l` again, you'll see our folder is now gone.
+You just deleted the `test` folder! 😱 If you `ls` again, you'll see our folder is now gone.
 
 `rm -rf` is a very quick way to throw things in the trash. Use it wisely!
 
@@ -38,24 +38,24 @@ You just deleted the `test` folder! 😱 If you `l` again, you'll see our folder
 
 Go to the [template-frontend repository](https://github.com/CodingLawyersClub/template-frontend) and click the button that says "Fork" in the top right. When prompted, select your username.
 
-Go to `iTerm`. Type `cd Desktop` and hit enter to move into your Desktop. Type `l` and hit enter to see all the files on your desktop. You're in the Desktop folder without all the fancy UI that your operating system provides. This is what a computer looks like behind the scenes.
+Go to `iTerm`. Type `cd Desktop` and hit enter to move into your Desktop.
 
-While in Desktop, clone the frontend template repository and name is `fundamentals`. Do this by running the following command. *MAKE SURE YOU REPLACE YOUR_USERNAME_HERE WITH YOUR USERNAME!*:
-
-```
-➜  Desktop git clone git@github.com:YOUR_USERNAME_HERE/template-frontend.git fundamentals
-```
-
-Now `cd` into the folder you just created:
+While in Desktop, clone the frontend template repository and name is `fundamentals`. Do this by running the following command. *MAKE SURE YOU REPLACE YOUR_USERNAME_HERE WITH YOUR USERNAME!*.
 
 ```
-➜  Desktop cd fundamentals
+$ git clone git@github.com:YOUR_USERNAME_HERE/template-frontend.git fundamentals
 ```
 
-Now you're in the `fundamentals` directory. We need to install dependencies to get this to run. we do that by running `yarn`:
+The `$` in the above command represents the prompt and is not meant to be typed. Your prompt may look different! Now `cd` into the folder you just created:
 
 ```
-➜  fundamentals git:(master) yarn
+$ cd fundamentals
+```
+
+Now you're in the `fundamentals` directory. We need to install Javascript dependencies required for our application. We do that by running `yarn`:
+
+```
+$ yarn
 ```
 
 It's going to install a bunch of stuff. Let it run for a minute or two.
@@ -63,7 +63,7 @@ It's going to install a bunch of stuff. Let it run for a minute or two.
 Once it's done, start the app by running `yarn dev`:
 
 ```
-➜  fundamentals git:(master) yarn dev
+$ yarn dev
 ```
 
 A window should pop open in your default browswer – you're now running an app. If your default isn't Chrome, please copy and paste the url (http://localhost:3005/) into Chrome; it's much better for developers.
@@ -82,12 +82,12 @@ In the terminal, press `⌘ + T`. to open a new tab
 In the new tab, run `code .` to open our project in VS Code:
 
 ```
-➜  fundamentals git:(master) code .
+$ code .
 ```
 
 Inside of VS Code, type `⌘ + P` and search for `Home`. Press enter to select the file. The `Home/index.js` should open.
 
-Right above the thing that says `render()` copy and paste the following lines of code exactly how I have it:
+Right above the line that says `render()`, copy and paste the following lines of code exactly how I have it:
 
 ```
 componentDidMount() {
