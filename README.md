@@ -14,11 +14,11 @@ The `cd` command is probably the most important for our purposes. `cd` stands fo
 
 Open up iTerm. Right now you're going to be in your root directory. I know that because of the `~`. Cool. type `cd Desk` and hit TAB. The TAB is an insanely helpful autocomplete trick we use so we don't have to type out the full name everytime we want to go somewhere. It should autocomplete to "Desktop". Hit enter. You're now in you Desktop!
 
-Want proof? type `l` and hit enter
+Want proof? type `l` and hit enter. The `l` command is short for listing out the contents of your directory. You're going to use it *all the time* so get comfortable with him.
 
 You should see all the files located in your Desktop directory!
 
-OK, great. Now I want you to type `cd ..`. Hit enter
+OK, great. Now I want you to type `cd ..`. Hit enter.
 
 See how you're back in the `~` directory? the `..` take you one out. So if you want to go out a folder, you `cd ..`. If you want to go in you `cd FOLDER_NAME`
 
