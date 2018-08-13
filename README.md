@@ -763,8 +763,53 @@ render() {
 }
 ```
 
-Try compressing the page by draggin chrome thinner and thinner. See how the Boxes are adjusting. From the widest up, each box will take up 1/4 of the page. Then from the middle to the widest each Box will take up 1/2 the page. Finally, at the smallest each Box will take up a full page width. Your page should look something like this:
+Try compressing the page by draggin chrome thinner and thinner. See how the Boxes are adjusting. From the widest up, each box will take up 1/4 of the page. Then from the middle to the widest each Box will take up 1/2 the page. Finally, at the smallest each Box will take up a full page width. Your page should look something like this when fully compressed:
 ![Responsive Box](https://s3.amazonaws.com/clc-images/ResponsiveBox.png)
+
+You can add padding to each box with `p`. The padding will just give it extra fluff. Try adding `p={10}` to each Box.
+
+```
+return (
+  <Flex flexWrap="wrap">
+    <Box1 w={[1, 1/2, 1/4]} p={10}>
+      Box1!
+    </Box1>
+    <Box2 w={[1, 1/2, 1/4]} p={10}>
+      Box2!
+    </Box2>
+    <Box3 w={[1, 1/2, 1/4]} p={10}>
+      Box3!
+    </Box3>
+    <Box4 w={[1, 1/2, 1/4]} p={10}>
+      Box4!
+    </Box4>
+    <Box5 w={[1, 1/2, 1/4]} p={10}>
+      Box5!
+    </Box5>
+  </Flex>
+)
+```
+
+Delete `Box3`, `Box4` and `Box5` so only `Box1` and `Box2` remain.
+
+They're kind of shoved to he left, which just feels like bad feng shui. Let's center them. This is where another `<Flex>` property comes into play, `justifyContent`:
+
+```
+render() {
+  return (
+    <Flex flexWrap="wrap" justifyContent='center'>
+      <Box1 w={[1, 1/2, 1/4]} p={10}>
+        Box1!
+      </Box1>
+      <Box2 w={[1, 1/2, 1/4]} p={10}>
+        Box2!
+      </Box2>
+    </Flex>
+  )
+}
+```
+
+Everything should be centered now. Much better :)
 
 
 
