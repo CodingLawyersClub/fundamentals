@@ -577,14 +577,196 @@ Cool. Our page loads again but you'll see now it's completely blank! This is bec
 
 Ok, enough chit chat. Let's try making some actual stuff!
 
-### Flexbox
+### Styled Components
 
-OK I want you to import two things on the top of the page. Just copy and paste like I have:
+OK I want you to import two things on the top of the page where the rest of the `import`s are. Just copy and paste like I have:
 
 ```
 import styled from 'styled-components';
 import { Box, Flex } from 'rebass';
 ```
+
+OK le'ts go back to the `render` method. Delete the `<div>`s. Add the following:
+
+```
+render() {
+  return (
+    <Flex>
+    </Flex>
+  )
+}
+```
+
+Don't worry about what `<Flex>` is yet. Right above of the line that says `export default class...` add the following:
+
+```
+const Box1 = styled(Box)`
+  background-color: green
+`
+```
+
+This is `styled-components` in action. Let's walk through it:
+
+1. You know what `const` is now. Just defining a variable named `Box1`
+2. `styled` is some magic. It is what allows us to actually apply `css` to a component. The component is something called a `Box`
+3. `background-color` is actual css. It does exactly what you think. It applies the green background color to this component, `Box1`
+4. the `` ` ``  at the bottom is really important. It's some fancy javascript magic. Just don't forget to include it :)
+
+Ok, make three more `Box` styled components. Label them `Box2` `Box3` and `Box4`. Give them all different colors. It should look something like this:
+
+```
+const Box1 = styled(Box)`
+  background-color: green
+`
+
+const Box2 = styled(Box)`
+  background-color: orange
+`
+
+const Box3 = styled(Box)`
+  background-color: pink
+`
+
+const Box4 = styled(Box)`
+  background-color: red
+`
+```
+
+Let's put these to use!
+
+## Flexbox
+
+The `<Flex>` is a component we use for alignment. Inside of these `<Flex>`s we put `<Box>`s. The `<Flex>` takes care of aligning these `<Box>`s. Add our four `<Box>`s
+
+```
+render() {
+  return (
+    <Flex>
+      <Box1>
+      </Box1>
+      <Box2>
+      </Box2>
+      <Box3>
+      </Box3>
+      <Box4>
+      </Box4>
+    </Flex>
+  )
+}
+```
+
+Save and let the page reload. Still blank...what's going on here?
+
+Well, by default these boxes have no width. Why would they? There's nothing inside of them right now!
+
+Let's give these `Box`s width by putting text inside of them:
+
+```
+render() {
+  return (
+    <Flex>
+      <Box1>
+        Box1!
+      </Box1>
+      <Box2>
+        Box2!
+      </Box2>
+      <Box3>
+        Box3!
+      </Box3>
+      <Box4>
+        Box4!
+      </Box4>
+    </Flex>
+  )
+}
+```
+
+Save and let the page reload. You should see some tiny multicolored boxes! See how the `Box` extends to the size of the text? Now that we put text in our `Box` was given an inherent width to match what's inside of it, text.
+
+Now it's time to see where flexbox really comes in use. give each box a width of 1/4. This means that each `Box` will have a width `1/4` the size of the page.
+
+```
+render() {
+  return (
+    <Flex>
+      <Box1 w={[1/4]}>
+        Box1!
+      </Box1 w={[1/4]}>
+      <Box2>
+        Box2!
+      </Box2>
+      <Box3 w={[1/4]}>
+        Box3!
+      </Box3>
+      <Box4 w={[1/4]}>
+        Box4!
+      </Box4>
+    </Flex>
+  )
+}
+```
+
+The page should now look something like this:
+
+![Boxes](https://s3.amazonaws.com/clc-images/Boxes.png)
+
+Shrink and grow the page by dragging the window to be super thin and then the size of the desktop. See how the boxes are auto adjusting? Each box will always be 1/4 of the page! 💫Flexbox magic💫
+
+Hmm...but now you got me thinking. What would happen if we added another box with 1/4 width. That would be five boxes with 1/4 width. Let's try and find out. Create a `<Box5>` the same way as the others, and give it a different color.
+
+When you reload the page you'll see it still added it to the same lines. But we know for a fact that each box is no longer 1/4 of the page because that would be 5/4 the width which, well, isn't possible. So what's going on? Well, basically, the library that does Flexbox for us realizes we made a mistake and is trying its best to give you the closest match.
+
+See, we need to put our `<Flex>` element to use to get what we want – each `<Box>` taking up 1/4 of the page. Our `<Flex>` has been awfully lazy, so let's do that now.
+
+Change the `Flex` to the following:
+
+```
+<Flex flexWrap="wrap">
+```
+
+Save and let the page reload. Now our fifth `Box` should be wrapped onto the second line. Everything should be 1/4 of the page. Wonderful.
+
+### Responsive Desgin
+
+You'll probably heard of responsive design. In a nutshell, it basically means that the website needs to look good on more than just the computer. It needs to look awesome on phones, tablets, any screen size really.
+
+For our purposes, I want each Box to take up it's own row when on a phone. 1/4 the width of a phone is way too tiny for me. We do that in the width (`w`) property on the `Box`. Change each `w` component on our `Box` to look like this:
+
+```
+      <Box1 w={[1, 1/2, 1/4]}>
+```
+
+Our `render` should look something like this now:
+
+```
+render() {
+  return (
+    <Flex flexWrap="wrap">
+      <Box1 w={[1, 1/2, 1/4]}>
+        Box1!
+      </Box1>
+      <Box2 w={[1, 1/2, 1/4]}>
+        Box2!
+      </Box2>
+      <Box3 w={[1, 1/2, 1/4]}>
+        Box3!
+      </Box3>
+      <Box4 w={[1, 1/2, 1/4]}>
+        Box4!
+      </Box4>
+      <Box5 w={[1, 1/2, 1/4]}>
+        Box5!
+      </Box5>
+    </Flex>
+  )
+}
+```
+
+Try compressing the page by draggin chrome thinner and thinner. See how the Boxes are adjusting. From the widest up, each box will take up 1/4 of the page. Then from the middle to the widest each Box will take up 1/2 the page. Finally, at the smallest each Box will take up a full page width. Your page should look something like this:
+![Responsive Box](https://s3.amazonaws.com/clc-images/ResponsiveBox.png)
+
+
 
 
 
