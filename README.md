@@ -50,7 +50,7 @@ VSCode should pop-up, and the repository only contains two files. This weird `_c
 
 ## Prepping
 
-Go to the [template-frontend repository](https://github.com/CodingLawyersClub/template-frontend) and click the button that says "Fork" in the top right. When prompted, select your username.
+Go to the [template-frontend repository](https://github.com/CodingLawyersClub/template-frontend) and click the button that says "Fork" in the top right. If prompted, select your username.
 
 Go to `iTerm`. Type `cd Desktop` and hit enter to move into your Desktop.
 
@@ -183,7 +183,7 @@ componentDidMount() {
 
 It will become very clear what that comma is doing in the `console.log` – I think it's just easier to see it.
 
-Let the page reload. As you might have expected, this is going to print `Hello`. We're simply assigning a string, "Hello" to our variable `firstVariable` and then logging it.
+Let the page reload. As you might have expected, this is going to print `FIRST VARIABLE Hello`. We're simply assigning a string, "Hello" to our variable `firstVariable` and then logging it.
 
 OK, now lets try `const`:
 
@@ -215,8 +215,8 @@ componentDidMount() {
 Let the page reload. What does it print? You should get:
 
 ```
-Goodbye
-Hello
+FIRST VARIABLE Goodbye
+SECOND VARIABLE Hello
 ```
 
 Ok, let's try the same thing for `secondVariable`
@@ -291,7 +291,7 @@ componentDidMount() {
 
 Because `5` is not `3`, it returns `false` and the `else` statement runs.
 
-You can have multiple `if`'s together. The one's after the `if` are called an `else if`. Try the following code:
+You can have multiple `if`'s together. The one's after the first `if` are called `else if`. Try the following code:
 
 ```
 componentDidMount() {
@@ -326,7 +326,7 @@ let person = { };
 Right now our person object is blank. But people have all sorts of properties, so let's give this `person` a little life. How about a `firstName` and a `lastName`. We assign values with the `.` (dot) notation:
 
 ```
-person.firstName = "John";
+person.firstName = "Jon";
 person.lastName = "Snow";
 ```
 
@@ -341,7 +341,7 @@ console.log(person);
 
 You'll see that our `person` object now contains filled in properties of `firstName` and `lastName`. Awesome.
 
-You can access a specific property with `.` (dot notation) without setting it equal to anything:
+You can access a specific property with `.` (dot) without setting it equal to anything:
 
 ```
 console.log(person.lastName)
@@ -360,7 +360,7 @@ As an example, here's an array of strings (string is a fancy word for text. Reme
 let arrayOfStrings = [ "One", "Two", "Three", "Four" ];
 ```
 
-You can add to arrays with `.push`
+You can add to arrays with `push`
 
 In `componentDidMount()` write the following:
 
@@ -375,7 +375,7 @@ componentDidMount() {
 
 You'll see it tacked the "Five" onto the end of the array.
 
-The opposite of `.push` is `.pop`. The `.pop` takes off the last element in the array. Try adding the following:
+The opposite of `push` is `pop`. The `.pop` takes off the last element in the array. Try adding the following:
 
 ```
 componentDidMount() {
@@ -392,7 +392,7 @@ You'll see through our `console.log`'s that `push` adds the "Five" and then `pop
 
 Arrays are super important because when we query our database we often get back an array of data. However, an array of data for its own sake is pretty useless. Usually we want to go over that data and do something to each element in the list. That's where `.map` comes in.
 
-The `.map` goes over each element of the array and does whatever you'd like to each element, and then returns a brand new array with however you defined what to do with each element. Let's see this in action. Change the `componentDidMount()` to the following:
+The `map` goes over each element of the array and does whatever you'd like to each element, and then returns a brand new array with however you defined what to do with each element. Let's see this in action. Change the `componentDidMount()` to the following:
 
 ```
 componentDidMount() {
@@ -405,7 +405,7 @@ componentDidMount() {
 There's a lot going on here. Let's walk through it:
 1. We have an `arrayOfJustices`. This is an array of objects. Each object has a `firstName` and a `lastName`
 2. We're defining a variable, `fullNameJustices` to be equal to our `arrayOfJustices` *AFTER* we have `map`ped over it
-3. The backticks, \`, are how we join strings with variables. It automatically takes our two variables and joins them together under the backtick
+3. The backticks, `` ` ``, are how we join strings with variables. It automatically takes our two variables and joins them together under the backtick
 4. We log the newly returned array, `fullNameOfJustices`. You'll see it is no longer an array of objects with `{firstName:..., lastName:...}`. Our map function has transformed each object into a full name string, and built an array of these full name strings to be assigned to `fullNameJustices`
 
 It should log the following:
