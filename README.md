@@ -525,7 +525,7 @@ Ah, that's because I haven't told you about scope!
 
 First, I want to show you a simpler example.
 
-Define two functions:
+Lets say we had two functions:
 
 ```
 function1() {
@@ -554,7 +554,7 @@ You would get a 💥💥💥crash💥💥💥!
 
 Why? Because *VARIABLES DECLARED INSIDE A FUNCTION ARE LOCAL TO THAT FUNCTION*. Only `function2()` knoes about `variableInFunction2` and only `function1()` knows about `variableInFunction1`!
 
-Ok, well, that's important to know. But what the hell does that have to do with `printHello()`?
+Ok, well, that's important to know. But what the hell does that have to do with our `printHello()` example?
 
 Like with our variables example, when we call `printHello`, the computer is expecting that function to have been defined inside of `componentDidMount`. That's why it worked before with `myFunction`. `printHello` is not defined within `componentDidMount` however. It's defined on our class, `Home`. So how do we access it? Are we doomed?
 
@@ -589,7 +589,7 @@ We're going to leave `componentDidMount` alone for a while and start working wit
 
 So let's try putting some stuff in the `render`!
 
-Delete all the stuff in the render except the `return` and parentheses so it looks like this:
+Staying in the `Home/index.js` file, delete all the stuff in the render except the `return` and parentheses so it looks like this:
 
 ```
 render() {
@@ -603,9 +603,9 @@ Save and let the page reload. What happens?
 
 💥💥💥Crash!💥💥💥
 
-You'll see somethign about an unexpected token. What gives?
+You'll see something about an unexpected token. What gives?
 
-Well, I hope you remember that *render must return something*. You can never have a React component that returns nothing!
+Well, I hope this helps you understand that on every React component, *render must return something*. You can never have a React component that returns nothing!
 
 OK, let's fix that. Put in a `<div>` which is the most standard HTML component. Don't forget all HTML tags need to have a closing counterpart, too.
 
@@ -623,14 +623,14 @@ Ok, enough chit chat. Let's try making some actual stuff!
 
 ### Styled Components
 
-OK I want you to import two things on the top of the page where the rest of the `import`s are. Just copy and paste like I have:
+I want you to import two things on the top of the page where the rest of the `import`s are. Just copy and paste like I have:
 
 ```
 import styled from 'styled-components';
 import { Box, Flex } from 'rebass';
 ```
 
-OK le'ts go back to the `render` method. Delete the `<div>`s. Add the following:
+Let's go back to the `render` method. Delete the `<div>`s. Add the following:
 
 ```
 render() {
@@ -654,7 +654,7 @@ This is `styled-components` in action. Let's walk through it:
 1. You know what `const` is now. Just defining a variable named `Box1`
 2. `styled` is some magic. It is what allows us to actually apply `css` to a component. The component is something called a `Box`
 3. `background-color` is actual css. It does exactly what you think. It applies the green background color to this component, `Box1`
-4. the `` ` ``  at the bottom is really important. It's some fancy javascript magic. Just don't forget to include it :)
+4. the `` ` ``  at the beginning and end is really important. It's some fancy javascript magic. Just don't forget to include it :)
 
 Ok, make three more `Box` styled components. Label them `Box2` `Box3` and `Box4`. Give them all different colors. It should look something like this:
 
@@ -728,7 +728,7 @@ render() {
 
 Save and let the page reload. You should see some tiny multicolored boxes! See how the `Box` extends to the size of the text? Now that we put text in our `Box` was given an inherent width to match what's inside of it, text.
 
-Now it's time to see where flexbox really comes in use. give each box a width of 1/4. This means that each `Box` will have a width `1/4` the size of the page.
+Now it's time to see where flexbox really comes in use. give each box a width of 1/4. You do this with `w=` on each `Box`. For right now, just copy how I gave each `Box` a width of `1/4` the width of the page.
 
 ```
 render() {
@@ -769,16 +769,16 @@ Change the `Flex` to the following:
 <Flex flexWrap="wrap">
 ```
 
-Save and let the page reload. Now our fifth `Box` should be wrapped onto the second line. Everything should be 1/4 of the page. Wonderful.
+Save and let the page reload. Now our fifth `Box` should be wrapped onto the second line. Everything should be 1/4 of the page. So now you know if you want your `Box`s to wrap around, you set `flexWrap='wrap'` on your `<Flex>` component.
 
 ### Responsive Desgin
 
 You'll probably heard of responsive design. In a nutshell, it basically means that the website needs to look good on more than just the computer. It needs to look awesome on phones, tablets, any screen size really.
 
-For our purposes, I want each Box to take up it's own row when on a phone. 1/4 the width of a phone is way too tiny for me. We do that in the width (`w`) property on the `Box`. Change each `w` component on our `Box` to look like this:
+For our purposes, I want each Box to take up it's own row when on a phone. 1/4 the width of a phone is way too tiny for me. We do that in the width (`w`) property on the `Box`, be setting values at different breakpoints. Change each `w` component on our `Box` to look like this:
 
 ```
-      <Box1 w={[1, 1/2, 1/4]}>
+<Box1 w={[1, 1/2, 1/4]}>
 ```
 
 Our `render` should look something like this now:
@@ -807,7 +807,7 @@ render() {
 }
 ```
 
-Try compressing the page by draggin chrome thinner and thinner. See how the Boxes are adjusting. From the widest up, each box will take up 1/4 of the page. Then from the middle to the widest each Box will take up 1/2 the page. Finally, at the smallest each Box will take up a full page width. Your page should look something like this when fully compressed:
+Try compressing the page by draggin chrome thinner and thinner. See how the Boxes are adjusting. At the page's widest, each box will take up 1/4 of the page. Then from the middle to the widest each Box will take up 1/2 the page. Finally, at the smallest each Box will take up a full page width. Your page should look something like this when fully compressed:
 ![Responsive Box](https://s3.amazonaws.com/clc-images/ResponsiveBox.png)
 
 You can add padding to each box with `p`. The padding will just give it extra fluff. Try adding `p={10}` to each Box.
